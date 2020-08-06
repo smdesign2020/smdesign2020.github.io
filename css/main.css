@@ -239,7 +239,17 @@ a:active {
 }
 
 .header-container.sticky #smdesignhi-icon {
-  width: 10em;
+  width: 5em;
+}
+
+#footer-icon {
+  width: 3em;
+}
+
+@media only screen and (min-width: 480px) {
+  .header-container.sticky #smdesignhi-icon {
+    width: 10em;
+  }
 }
 
 
@@ -299,20 +309,6 @@ a:active {
   }
 }
 
-@media (min-width: 794px) {
-  #videoBG {
-  width:100%;
-  height: auto;
-  }
-}
-
-@media (max-width: 794px) {
-  #videoBG { 
-  width:auto;
-  height: 100%;
-  }
-}
-
 .hero-content {
   display: -webkit-box;
   display: flex;
@@ -332,51 +328,10 @@ a:active {
   width: 100%;
 }
 
-#animated-svg {
-  width: 80%;
-  max-width: 420px;
-}
 
-#animated-svg path {
-  -webkit-transition: .3s ease-out;
-  transition: .3s ease-out;
-  fill: var(--accent-one-color);
-}
-
-#animated-svg path#icon.kaboom,
-#animated-svg path#k.kaboom {
-  fill: var(--accent-two-color);
-  /*fill: var(--foreground-color);*/
-}
-
-#animated-svg path#c.kaboom,
-#animated-svg path#o.kaboom,
-#animated-svg path#d.kaboom,
-#animated-svg path#e.kaboom,
-#animated-svg path#d2.kaboom {
-  fill: var(--foreground-color);
-  /*fill: var(--accent-one-color);*/
-}
-
-#tagline {
-  color: var(--accent-one-color);
-  opacity: 0;
-  -webkit-transform: translate3d(0,25%,0);
-      transform: translate3d(0,25%,0);
-  -webkit-transition: opacity 600ms linear 100ms, -webkit-transform 1000ms ease-out;
-  transition: opacity 600ms linear 100ms, -webkit-transform 1000ms ease-out;
-  transition: opacity 600ms linear 100ms, transform 1000ms ease-out;
-  transition: opacity 600ms linear 100ms, transform 1000ms ease-out, -webkit-transform 1000ms ease-out;
-}
-
-#tagline.show {
-  opacity: 1;
-  -webkit-transform: translate3d(0,0,0);
-      transform: translate3d(0,0,0);
-}
-
-#footer-icon {
-  width: 3em;
+.main {
+  background-color: white;
+  padding: 5em;
 }
 
 /* ==========================================================================
@@ -420,14 +375,6 @@ a:active {
 
 @media only screen and (min-width: 768px) {
 
-/* ====================
-  WIDE: CSS3 Effects
-   ==================== */
-
-  .main aside {
-    box-shadow: 0 5px 10px #aaa;
-  }
-
 /* ============
   WIDE: Menu
    ============ */
@@ -444,16 +391,16 @@ a:active {
 /* ============
   WIDE: Main
    ============ */
-
-  .main article {
-    float: left;
-    width: 57%;
+  .main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.4);
+    padding: 5em;
+    transform: translate3d(-50%, -50%, 0);
   }
 
-  .main aside {
-    float: right;
-    width: 28%;
-  }
 }
 
 @media only screen and (min-width: 1140px) {

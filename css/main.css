@@ -105,10 +105,6 @@ body {
       transition: .2s ease;
 }
 
-.main aside {
-  border-top: 20px solid var(--foreground-color);
-}
-
 .footer-container {
   border-top: 1px solid var(--accent-two-color);
 }
@@ -156,16 +152,6 @@ nav a:hover {
 
 .main {
   padding: 30px 0;
-}
-
-.main article h1 {
-  font-size: 2em;
-}
-
-.main aside {
-  background: white;
-  color: var(--background-color);
-  padding: 0px 5% 10px;
 }
 
 .footer-container footer {
@@ -239,7 +225,7 @@ a:active {
 }
 
 .header-container.sticky #smdesignhi-icon {
-  width: 5em;
+  width: 6em;
 }
 
 #footer-icon {
@@ -328,10 +314,13 @@ a:active {
   width: 100%;
 }
 
-
 .main {
   background-color: white;
-  padding: 5em;
+  padding: 1em 5em 3em;
+}
+
+.description {
+  color: #4d687d;
 }
 
 /* ==========================================================================

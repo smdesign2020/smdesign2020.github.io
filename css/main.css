@@ -156,6 +156,7 @@ nav a:hover {
 
 .footer-container footer {
   padding: 20px 0;
+    text-align: center;
 }
 
 /* ===============
@@ -222,6 +223,7 @@ a:active {
 .header-container.sticky {
   background-color: white;
   box-shadow: 0 0 2px 0 rgba(0,0,0,.4);
+  text-align: center;
 }
 
 .header-container.sticky #smdesignhi-icon {

@@ -12,6 +12,9 @@
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
         <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
+          href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css">
+
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
@@ -33,14 +36,6 @@
 
           <img src="../img/SM.png" id="sm" alt="SM Design & Home Improvement" width="100%" />
 
-          <section class='wrapper'>
-            <article>
-              <p class='description'>SM Design & Home Improvement has built custom homes throughout Florida including
-                Weston, Broward, and Dade Counties. SM Design & Home Improvement also offers construction consulting and services in
-                South Florida.</p>
-            </article>
-          </section>
-
           <main class='main'>
             <article>
               <p>Carlos Soto</p>
@@ -54,7 +49,67 @@
           </main>
         </section>
 
+        <style>
+          h2 {
+            text-align: center;
+            overflow: hidden;
+            margin-bottom: 0;
+            width: 100%;
+            color: #4d687d;
+          }
+          h2::before,
+          h2::after {
+            background-color: #c7c7c7;
+            content: "";
+            display: inline-block;
+            height: 1px;
+            position: relative;
+            vertical-align: middle;
+            width: 50%;
+          }
+          h2::before {
+            right: 0.5em;
+            margin-left: -50%;
+          }
+          h2::after {
+            left: 0.5em;
+            margin-right: -50%;
+          }
+          .align-center {
+            text-align: center;
+          }
+        </style>
+
+        <style>
+          #about {
+            padding: 30px 0;
+          }
+        </style>
+
+        <section class='wrapper'>
+          <article id="about">
+            <h2>About</h2>
+            <p class='description'>SM Design & Home Improvement has built custom homes throughout Florida including
+              Weston, Broward, and Dade Counties. SM Design & Home Improvement also offers construction consulting and services
+              in
+              South Florida.</p>
+          </article>
+        </section>
+
+
+        <style>
+          #gallery {
+            padding: 30px 0;
+          }
+          .fotorama {
+            margin: 1em 0;
+          }
+        </style>
         
+        <section class='wrapper'>
+          <article id='gallery'>
+          </article>
+        </section>
 
         <section class='footer-container'>
           <footer class='footer wrapper'>
@@ -71,6 +126,7 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
         <script src="js/plugins.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
         <script src="js/main.js"></script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->

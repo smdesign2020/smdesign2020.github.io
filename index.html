@@ -15,7 +15,7 @@
         <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
           href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css">
 
-        <link rel="stylesheet" href="css/main_v2.css">
+        <link rel="stylesheet" href="css/main_v3.css">
 
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
@@ -24,29 +24,68 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- <div class='skewed-bg'></div> -->
+        <header class='header-container' id='header'>
+          <div class='header-inner'>
+            <img src="../img/LOGO.jpg" id='smdesignhi-icon' alt="smdesignhi" width="100%" />
+
+            <button id='header-contact-button' name='header-contact-button' aria-label="Contact"> Contact </button>
+          </div>
+        </header>
 
         <section class="hero-container">
-          
-          <header class='header-container' id='header'>
-            <div class='header-inner'>
-              <img src="../img/LOGO.jpg" id='smdesignhi-icon' alt="smdesignhi" width="100%" />
-            </div>
-          </header>
 
-          <img src="../img/SM.png" id="sm" alt="SM Design & Home Improvement" width="100%" />
+          <button id='contact-button' name='contact-button' aria-label="Contact"> Contact </button>
 
-          <main class='main'>
+          <main class='main' id='contact-card'>
+            <button class='button-close' id='contact-close-button'>X</button>
             <article>
-              <p>Carlos Soto</p>
+              <h2>Contact</h2>
+              <p class='lead'>Carlos Soto</p>
               <p><a href='tel:7865870668'>+1 (786) 587-0668</a></p>
-              <a href='mailto:mercedes@smdesignhi.com'>mercedes@smdesignhi.com</a>
-              <hr>
-              <p>Mercedes Miodownik</p>
-              <p><a href='tel:2398229327'>+1 (239) 822-9327</a></p>
               <a href='mailto:carlos@smdesignhi.com'>carlos@smdesignhi.com</a>
+              <hr>
+              <p class='lead'>Mercedes Miodownik</p>
+              <p><a href='tel:2398229327'>+1 (239) 822-9327</a></p>
+              <a href='mailto:mercedes@smdesignhi.com'>mercedes@smdesignhi.com</a>
             </article>
           </main>
+
+          <script>
+            var supportsPassive = false;
+            try {
+              var opts = Object.defineProperty({}, 'passive', {
+                get: function () {
+                  supportsPassive = true;
+                }
+              });
+              window.addEventListener("testPassive", null, opts);
+              window.removeEventListener("testPassive", null, opts);
+            } catch (e) { }
+
+            var headerbtn = document.querySelector('#header-contact-button');
+            var herobtn = document.querySelector('#contact-button');
+            var closebtn = document.querySelector('#contact-close-button');
+            var card = document.querySelector('#contact-card');
+
+            function toggleCard() {
+              console.log('click')
+              if (card.classList.contains('toggle')) {
+                card.classList.remove('toggle');
+              } else {
+                card.classList.add('toggle');
+              }
+            }
+
+            headerbtn.addEventListener('click', toggleCard, supportsPassive ? { passive: true } : false);
+            herobtn.addEventListener('click', toggleCard, supportsPassive ? { passive: true } : false);
+            closebtn.addEventListener('click', toggleCard, supportsPassive ? { passive: true } : false);
+
+            card.addEventListener('click', function (event) {
+              event.stopPropagation();
+            });
+
+            document.addEventListener('clikc', toggleCard, supportsPassive ? { passive: true } : false);
+          </script>
         </section>
 
         <style>
@@ -87,7 +126,7 @@
         </style>
 
         <section class='wrapper'>
-          <article id="about">
+          <article id="about" style='text-align: center;'>
             <h2>About</h2>
             <p class='description'>SM Design & Home Improvement has built custom homes throughout Florida including
               Weston, Broward, and Dade Counties. SM Design & Home Improvement also offers construction consulting and services
@@ -115,7 +154,7 @@
           <footer class='footer wrapper'>
             <img src="img/LOGO.jpg" alt="smdesignhi-icon" id="footer-icon" width="100%" />
             <span id="copyright" class='text-center' property="dc:rights">&copy;
-              <span property="dc:dateCopyrighted">2020 </span>
+              <span property="dc:dateCopyrighted">2021 </span>
               <span property="dc:publisher">smdesignhi.com</span>
             </span>
           </footer>

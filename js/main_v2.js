@@ -1,4 +1,16 @@
+function waitTilImageLoads() {
+  var img = new Image();
+  img.src = '../img/SM.png';
+  img.onload = function () {
+    setTimeout(function () {
+      document.getElementById("loader").classList.add('loaded');
+    }, 2000);
+  }
+}
+
 window.onload = function () {
+  waitTilImageLoads();
+
   // When the user scrolls the page, execute myFunction
   window.onscroll = function () { myFunction() };
 

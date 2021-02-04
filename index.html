@@ -135,7 +135,6 @@
           </article>
         </section>
 
-
         <style>
           #gallery {
             padding: 30px 0;
@@ -159,6 +158,89 @@
             </span>
           </footer>
         </section>
+
+        <style>
+          #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 100;
+            background-color: rgb(232,	194,	136);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .2s ease-in;
+          }
+        
+          #loader.loaded {
+            transform: translate3d(0, -200vh, 0);
+            opacity: 0;
+          }
+        
+          .kinetic {
+            position: relative;
+            height: 80px;
+            width: 80px;
+          }
+        
+          .kinetic::after,
+          .kinetic::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 0;
+            width: 0;
+            border: 50px solid transparent;
+            border-bottom-color: rgb(219,	108,	79);
+            animation: rotationA 2s linear infinite 0.5s;
+          }
+        
+          .kinetic::before {
+            transform: rotate(90deg);
+            animation: rotationB 2s linear infinite;
+          }
+        
+          @keyframes rotationA {
+        
+            0%,
+            25% {
+              transform: rotate(0deg);
+            }
+        
+            50%,
+            75% {
+              transform: rotate(180deg);
+            }
+        
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+        
+          @keyframes rotationB {
+        
+            0%,
+            25% {
+              transform: rotate(90deg);
+            }
+        
+            50%,
+            75% {
+              transform: rotate(270deg);
+            }
+        
+            100% {
+              transform: rotate(450deg);
+            }
+          }
+        </style>
+
+        <div id="loader">
+          <div class='kinetic'></div>
+        </div>
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

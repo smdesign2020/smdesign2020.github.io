@@ -304,8 +304,9 @@ a:active {
   display: flex;
   justify-content: center;
   align-items: center;
-
-    -webkit-animation-fill-mode: forwards;
+}
+.hero-container.animate {
+  -webkit-animation-fill-mode: forwards;
       animation-fill-mode: forwards;
   -webkit-animation: fadeIn 1s ease-out;
       animation: fadeIn 1s ease-out;

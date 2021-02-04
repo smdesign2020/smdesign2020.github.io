@@ -3,6 +3,7 @@ function waitTilImageLoads() {
   img.onload = function () {
     setTimeout(function () {
       document.getElementById("loader").classList.add('loaded');
+      document.getElementById("hero").classList.add('animate');
     }, 2000);
   }
   img.onerror = console.warn;
